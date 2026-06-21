@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — AndyyStudios</title>
+<meta name="description" content="Contactează AndyyStudios pentru proiectul tău de site web.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <span class="bracket">&lt;</span>Andyy<span class="accent-word">Studios</span><span class="bracket">/&gt;</span>
+    </a>
+    <button class="nav-toggle" aria-label="Comută meniul">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Acasă</a>
+      <a href="servicii.html">Servicii</a>
+      <a href="despre.html">Despre</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero wrap">
+    <h1>Hai să vorbim</h1>
+    <p class="muted" style="max-width:560px;">Spune-mi câte ceva despre proiectul tău și îți răspund cât mai rapid.</p>
+  </section>
+
+  <section class="wrap" style="padding-top:0;">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item">
+          <span class="label">email</span>
+          <a href="mailto:andyystudios1@gmail.com" class="accent">andyystudios1@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="label">răspuns</span>
+          <span class="muted">de obicei în 1–2 zile lucrătoare</span>
+        </div>
+      </div>
+
+      <div>
+        <form id="contactForm">
+          <div class="field">
+            <label for="name">Nume</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="message">Mesaj</label>
+            <textarea id="message" name="message" required placeholder="Spune-mi despre proiectul tău..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Trimite mesajul</button>
+          <p class="form-note">Apăsând „Trimite mesajul" se va deschide aplicația ta de email, cu mesajul precompletat către andyystudios1@gmail.com.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <p class="muted">© 2026 AndyyStudios. Toate drepturile rezervate.</p>
+    <div class="footer-links">
+      <a href="servicii.html">Servicii</a>
+      <a href="despre.html">Despre</a>
+      <a href="contact.html">Contact</a>
+      <a href="mailto:andyystudios1@gmail.com">andyystudios1@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+    const subject = encodeURIComponent("Proiect nou — " + name);
+    const body = encodeURIComponent(message + "\n\n— " + name + " (" + email + ")");
+    window.location.href = "mailto:andyystudios1@gmail.com?subject=" + subject + "&body=" + body;
+  });
+</script>
+</body>
+</html>
